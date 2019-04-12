@@ -6,7 +6,7 @@ from configparser import ConfigParser, ExtendedInterpolation
 from config import *
 from importlib import import_module, reload as r
 
-rp = path.dirname(path.realpath(__file__))
+rp =  path.dirname(path.realpath(__file__))
 api = Client(token, api_id, api_hash, workdir=path.join(rp, 'data'))
 cli = Client('{}-{}'.format(api_id, api_hash), api_id, api_hash, workdir=path.join(rp, 'data'))
 
