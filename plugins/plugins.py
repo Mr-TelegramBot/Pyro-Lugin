@@ -6,15 +6,14 @@ from pyrogram import Message, Client
 
 
 def run(app: Client, msg: Message):
-    newrp = rp.rstrip('/plugins')
     config = ConfigParser(interpolation=ExtendedInterpolation())
-    config.read(join(newrp, 'data', 'config.ini'))
+    config.read(join(rp, 'data', 'config.ini'))
     if search(r"^([!#/])?plg \+ (.+)$", msg.text):
         plugin_name = search(r"([!#/])?plg \+ (.+)", msg.text).group(2).strip()
         if plugin_name in config.options('Plugins'):
             config.set('Plugins', plugin_name, 'enabled')
             app.send_message(msg.chat.id, '**Plugin {} Has Been Enabled!**'.format(plugin_name), parse_mode='markdown')
-            with open(join(newrp, 'data', 'config.ini'), 'w') as file:
+            with open(join(rp, 'data', 'config.ini'), 'w') as file:
                 config.write(file)
             reload()
         else:
@@ -24,7 +23,7 @@ def run(app: Client, msg: Message):
         if plugin_name in config.options('Plugins'):
             config.set('Plugins', plugin_name, 'disabled')
             app.send_message(msg.chat.id, '**Plugin {} Has Been Disabled!**'.format(plugin_name), parse_mode='markdown')
-            with open(join(newrp, 'data', 'config.ini'), 'w') as file:
+            with open(join(rp, 'data', 'config.ini'), 'w') as file:
                 config.write(file)
             reload()
         else:
