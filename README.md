@@ -1,6 +1,2 @@
 # Pyro-Lugin
-<<<<<<< HEAD
-The Stable Basic Pyrogram Group Management Based On MultiPlugins...
-=======
 The Stable Basic Pyrogram Source Based On MultiPlugins...
->>>>>>> developer
