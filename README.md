@@ -1,2 +1,2 @@
-# Pyro-Lugin
+# PyroLugin
 The Stable Basic Pyrogram Source Based On MultiPlugins...
